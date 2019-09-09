@@ -9,7 +9,7 @@ model = joblib.load("finalized_model.pkl")
 
 @app.route('/')
 def home():
-    return "<h1>Flair Prediction Model As Microservice (API)</h1>"
+    return jsonify("Flair Prediction Model As Microservice (API)")
 
 @app.route('/predict', methods=['GET'])
 def predict():
@@ -48,7 +48,7 @@ def predict():
     feature = np.array(feature).reshape((1,))
     prediction = model.predict(feature)
     
-    return ' Result : {}'.format(prediction)
+    return jsonify(list(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
