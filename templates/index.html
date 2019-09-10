@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Flair Prediction</title>
 </head>
 <body>
     <div class="pred">
-        <h1>Reddit Flair Prediction</h1>
+        <h1><center>Reddit Flair Prediction</center></h1>
         <form action="{{ url_for('predict')}}" method="POST">
-            <input type="text" name="URL" placeholder="Url" required="required" />
-
+            <center>
+            <input type="text" name="URL" placeholder="Enter The Post URL" required="required" />
             <button type="submit" class="btn btn-primary btn-block btn-large btn-block">Predict</button>
+            </center>    
         </form>
         <br>
         <br>
-        <h3>
-            {{ prediction_text }}
-        </h3>
+        <h2><center> {{ prediction_text }} </center></h2>
         <br>
-        <a href="https://flair-api-json.herokuapp.com/"><b>Back<b></a>
+        <a id="link" href="https://flair-api-json.herokuapp.com/"><b><center>Back</center><b></a>
         <br><br>
-        <a href="https://brownie-analytics.herokuapp.com/"><b>Brownie Analysis</b></a>
+        <a id="link" href="https://brownie-analytics.herokuapp.com/"><h3><center>Statistical Analysis</center></h3></a>
     </div>
 </body>
 </html>
