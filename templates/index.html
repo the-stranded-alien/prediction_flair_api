@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flair Prediction</title>
+</head>
+<body>
+    <div class="pred">
+        <h1>Reddit Flair Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="POST">
+            <input type="text" name="URL" placeholder="Url" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large btn-block">Predict</button>
+        </form>
+        <br>
+        <br>
+        <h3>
+            {{ prediction_text }}
+        </h3>
+        <br>
+        <a href="http://127.0.0.1:5000/"><b>Back<b></a>
+        <br><br>
+        <a href="http://localhost:1611/"><b>Brownie Analysis</b></a>
+    </div>
+</body>
+</html>
